@@ -283,6 +283,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: take001_chr00
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 50ff4dc228bdd70418dce9899d59962f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50ff4dc228bdd70418dce9899d59962f, type: 3}
 --- !u!1 &786182008
@@ -578,6 +583,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 317a56890b5c8e74ab1d492a2c7fb608, type: 3}
+--- !u!1 &1654174621 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1271566130703531672, guid: c890b5dba2b319e4abf388752231c081,
+    type: 3}
+  m_PrefabInstance: {fileID: 7053576905651188293}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &1654174622
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654174621}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: -4092633118735577736, guid: 50ff4dc228bdd70418dce9899d59962f, type: 3}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &7053576905651188293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -645,6 +672,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5480457231441722968, guid: c890b5dba2b319e4abf388752231c081,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e3060d0edb999c94abe53e28a40d8bd6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c890b5dba2b319e4abf388752231c081, type: 3}
 --- !u!4 &8866748563674945127 stripped
