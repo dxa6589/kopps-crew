@@ -3,7 +3,27 @@ guid: 60048dae8ca8e1d49a41d5ae0eed7a11
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAIN.003
+    second: {fileID: 2100000, guid: c4a7cb08d48911343a7334be27d612db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAIN.004
+    second: {fileID: 2100000, guid: 212e195444a8ef743ba46adaebd88cbe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Screen.CHAND_Corner
+    second: {fileID: 2100000, guid: d7711f6b6bc0ef04b801caa675fc6c73, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Screen.CHAND_Corner.001
+    second: {fileID: 2100000, guid: 04c5638754a9e154e8581776b89d7dcd, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

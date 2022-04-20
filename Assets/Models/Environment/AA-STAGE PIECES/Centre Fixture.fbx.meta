@@ -7,6 +7,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: LIGHT.purple.001
+    second: {fileID: 2100000, guid: 865716f635caf8043984f9be39aa9446, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAIN.005
+    second: {fileID: 2100000, guid: 1cfa99ebdd910214aaaaec6636905b53, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Material.004
     second: {fileID: 2100000, guid: f194ed4a9881c2245a42cfaaafcbc6a4, type: 2}
   - first:

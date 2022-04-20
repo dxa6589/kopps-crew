@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Material.020
     second: {fileID: 2100000, guid: c93ffcec517ae93498cfa9a614d885cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCREENS.Pink
+    second: {fileID: 2100000, guid: 6b6f6223dcb1bd84896d3401bd38e84f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

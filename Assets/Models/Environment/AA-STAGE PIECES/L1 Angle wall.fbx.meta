@@ -3,7 +3,22 @@ guid: a0130cd431a35cf49b1bb789b098dcec
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LIGHT.004
+    second: {fileID: 2100000, guid: b3690fd586aaead44bfd48642b484a59, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAIN.020
+    second: {fileID: 2100000, guid: 2e2af903fc3dbdb439489ab63199d8ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCREENS
+    second: {fileID: 2100000, guid: dd357c275423c7f49bb479f7a3028639, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

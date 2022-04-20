@@ -11,6 +11,7 @@ public class GlitchObject : MonoBehaviour
         twitch,
         twitchFlash,
         destroy,
+        smrTest,
         none
     }
     public int gNum = 0;
@@ -19,6 +20,7 @@ public class GlitchObject : MonoBehaviour
     public int gDur = 0;
     public bool glitching;
     public List<GlitchType> progression;
+    public List<int> glitchDurations;
     public GlitchType final = GlitchType.none;
 
     // Specific glitch data
@@ -57,7 +59,7 @@ public class GlitchObject : MonoBehaviour
     {
         glitching = true;
         gDur = 10;
-
+        
         if (gNum >= progression.Count)
         {
             gType = final;
@@ -83,6 +85,9 @@ public class GlitchObject : MonoBehaviour
             case GlitchType.twitchFlash:
                 twitchDur = 3;
                 Twitch();
+                break;
+            case GlitchType.smrTest:
+                ColorChange2();
                 break;
             case GlitchType.destroy:
                 Destroy();
@@ -145,6 +150,16 @@ public class GlitchObject : MonoBehaviour
     }
 
     void ColorChange()
+    {
+        gameObject.GetComponent<MeshRenderer>().material = glitchMat;
+
+        //Material newMaterial = new Material(ogMat.shader);
+        //newMaterial.CopyPropertiesFromMaterial(ogMat);
+        //newMaterial.color = color;
+        //gameobject.GetComponent<MeshRenderer>().material = newMaterial;
+    }
+
+    void ColorChange2()
     {
         gameObject.GetComponent<MeshRenderer>().material = glitchMat;
 
