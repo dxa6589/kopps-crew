@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TransitionController : MonoBehaviour
+public class SequenceController : MonoBehaviour
 {
     List<Animator> controllers;
     public Animator singer, drummer, guitar, bass;
