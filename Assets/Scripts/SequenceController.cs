@@ -30,20 +30,25 @@ public class SequenceController : MonoBehaviour
         foreach (Animator anim in controllers)
         {
             anim.SetFloat("elapsedTime", elapsedTime);
-            if (elapsedTime >= playTime)
-            {
-                anim.SetTrigger("clap");
-            }
         }
-        if (!micSwitched && singer.GetCurrentAnimatorStateInfo(0).IsName("singing"))
+        if (!micSwitched && singer.GetCurrentAnimatorStateInfo(0).IsName("playing"))
         {
-            SwitchMic();
+            StartPlaying();
         }
         if (elapsedTime >= totalRunTime)
         {
-            endingCover.SetActive(true);
-            venue.SetActive(false);
+            EndPerformance();
         }
+    }
+
+    void StartPlaying()
+    {
+        SwitchMic();
+        foreach (Animator anim in controllers)
+        {
+            anim.SetTrigger("clap");
+        }
+        //anim.Play("Base Layer.playing", 0);
     }
 
     void SwitchMic()
@@ -51,5 +56,11 @@ public class SequenceController : MonoBehaviour
         rightMic.SetActive(true);
         leftMic.SetActive(false);
         micSwitched = true;
+    }
+
+    void EndPerformance()
+    {
+        endingCover.SetActive(true);
+        venue.SetActive(false);
     }
 }
