@@ -44,10 +44,10 @@ public class GlitchObject : MonoBehaviour
         ContinueGlitch();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         Debug.Log("Colliding!!");
-        if (other.gameObject.tag == "GameController")
+        if (other.gameObject.tag == "Player")
         {
             StartGlitch();
         }

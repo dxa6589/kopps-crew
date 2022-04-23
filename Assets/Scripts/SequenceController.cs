@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SequenceController : MonoBehaviour
 {
-    List<Animator> controllers;
-    public Animator singer, drummer, guitar, bass;
+    public Animator singerA, drummerA, guitarA, bassA;
     public AudioSource mainAudio;
     public float elapsedTime;
     public GameObject rightMic, leftMic;
@@ -16,11 +15,6 @@ public class SequenceController : MonoBehaviour
     void Start()
     {
         elapsedTime = 0;
-        controllers = new List<Animator>();
-        controllers.Add(singer);
-        controllers.Add(drummer);
-        controllers.Add(guitar);
-        controllers.Add(bass);
         leftMic.SetActive(true);
         rightMic.SetActive(false);
     }
@@ -29,7 +23,7 @@ public class SequenceController : MonoBehaviour
     void Update()
     {
         elapsedTime += Time.deltaTime;
-        if (!micSwitched && singer.GetCurrentAnimatorStateInfo(0).IsName("playing"))
+        if (!micSwitched && singerA.GetCurrentAnimatorStateInfo(0).IsName("playing"))
         {
             StartPlaying();
         }
@@ -42,9 +36,9 @@ public class SequenceController : MonoBehaviour
     void StartPlaying()
     {
         SwitchMic();
-        drummer.Play("playing");
-        guitar.Play("playing");
-        bass.Play("playing");
+        drummerA.Play("playing");
+        guitarA.Play("playing");
+        bassA.Play("playing");
     }
 
     void SwitchMic()
