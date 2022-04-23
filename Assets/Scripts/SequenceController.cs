@@ -9,7 +9,7 @@ public class SequenceController : MonoBehaviour
     public Animator singer, drummer, guitar, bass;
     public AudioSource mainAudio;
     public float elapsedTime;
-    public GameObject rightMic, leftMic, endingCover, venue;
+    public GameObject rightMic, leftMic;
     public bool micSwitched;
     public string opening = "OpeningScene", main = "MainScene", credits = "CreditsScene";
     // Start is called before the first frame update
@@ -23,7 +23,6 @@ public class SequenceController : MonoBehaviour
         controllers.Add(bass);
         leftMic.SetActive(true);
         rightMic.SetActive(false);
-        endingCover.SetActive(false);
     }
 
     // Update is called once per frame

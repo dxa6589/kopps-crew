@@ -18,7 +18,6 @@ public class GlitchObject : MonoBehaviour
     public float gTime = 0, gDur = 0;
     public bool glitching;
     public List<GlitchType> progression;
-    public List<int> glitchDurations;
     public GlitchType final = GlitchType.none;
 
     // Specific glitch data
