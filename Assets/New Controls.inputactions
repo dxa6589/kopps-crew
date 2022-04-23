@@ -2,6 +2,107 @@
     "name": "New Controls",
     "maps": [
         {
+            "name": "VR",
+            "id": "0a805f2f-47ef-461f-8a0e-41bc98bec8dd",
+            "actions": [
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "db352ea3-7eed-4f3e-ac47-d739a13ec06d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Point",
+                    "type": "Value",
+                    "id": "ac251e9f-1b51-478f-8ba4-8a6c65ff5ca8",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Back",
+                    "type": "Button",
+                    "id": "bb2e703b-6e3a-4031-ae3a-d49c18fc518a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "491b6678-10ae-4683-80d7-05ace205fc98",
+                    "path": "<ViveController>/trackpadClicked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "VRscheme",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "112b6a50-1e3c-4a93-8a5c-9387f7cbccaa",
+                    "path": "<ViveController>/gripPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "VRscheme",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ba29ab3a-01f2-4660-9ffc-c4877ac8f769",
+                    "path": "<ViveController>/menu",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "VRscheme",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ddceaed2-3095-4ce1-9242-d442cc009aef",
+                    "path": "<ViveController>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "VRscheme",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "453cd41f-920d-497d-891c-3221ea22407b",
+                    "path": "<ViveController>/pointer/isTracked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "VRscheme",
+                    "action": "Point",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "581cbcda-8674-4d62-9007-b01e31492359",
+                    "path": "<ViveController>/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "VRscheme",
+                    "action": "Back",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "TestControls",
             "id": "f3839ad0-30c3-4f16-8314-2411683db007",
             "actions": [
@@ -9,17 +110,18 @@
                     "name": "Move",
                     "type": "Value",
                     "id": "5bb17c90-fdf1-4aa7-a0c5-32ffbd30caf8",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
                 {
                     "name": "2D Vector",
-                    "id": "70c57049-0b68-4c76-b084-09a9eb217c6f",
-                    "path": "2DVector",
-                    "interactions": "Press",
+                    "id": "7d5e564a-d593-428c-9741-2ce6117d166a",
+                    "path": "2DVector(mode=2)",
+                    "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Move",
@@ -28,44 +130,44 @@
                 },
                 {
                     "name": "up",
-                    "id": "4859a067-d818-4a17-a804-7ce0cfa1623b",
+                    "id": "166daa20-297c-48c7-a1b3-0f12f735a1ff",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "New control scheme",
+                    "groups": "kb",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "down",
-                    "id": "411d5b46-bcff-4291-9845-3f8a5f06230e",
+                    "id": "ab0424cf-9a1c-481b-9db6-3e558dfb9f89",
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "New control scheme",
+                    "groups": "kb",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "left",
-                    "id": "efe1b573-ad97-409d-9173-bfca486fb0b4",
+                    "id": "dc0e1aea-68de-4d0f-be9c-eaba25ccd7a9",
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "New control scheme",
+                    "groups": "kb",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
-                    "id": "015ecb7a-9078-4772-8779-f7f4a7a37ffa",
+                    "id": "966d8a1f-c629-456d-9935-1cf9c1ba5d7d",
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "New control scheme",
+                    "groups": "kb",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -73,27 +175,28 @@
             ]
         },
         {
-            "name": "VR",
-            "id": "0a805f2f-47ef-461f-8a0e-41bc98bec8dd",
+            "name": "Mouse",
+            "id": "5c6654bd-2e20-4bb9-9f4a-acc7f518229b",
             "actions": [
                 {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "db352ea3-7eed-4f3e-ac47-d739a13ec06d",
-                    "expectedControlType": "Button",
+                    "name": "Point",
+                    "type": "Value",
+                    "id": "c37b9a57-ed2c-46e1-8d2b-949d7e880c6e",
+                    "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
                 {
                     "name": "",
-                    "id": "2e96281b-8ae0-45ac-8c5b-9558d7c5d3ce",
-                    "path": "",
+                    "id": "79145eb6-b01c-4786-9499-317d5ec9879c",
+                    "path": "<Pointer>/position",
                     "interactions": "",
                     "processors": "",
-                    "groups": "New control scheme",
-                    "action": "New action",
+                    "groups": "mouse",
+                    "action": "Point",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -102,11 +205,33 @@
     ],
     "controlSchemes": [
         {
-            "name": "New control scheme",
-            "bindingGroup": "New control scheme",
+            "name": "VRscheme",
+            "bindingGroup": "VRscheme",
+            "devices": [
+                {
+                    "devicePath": "<ViveController>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "kb",
+            "bindingGroup": "kb",
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "mouse",
+            "bindingGroup": "mouse",
+            "devices": [
+                {
+                    "devicePath": "<Mouse>",
                     "isOptional": false,
                     "isOR": false
                 }

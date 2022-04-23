@@ -11,13 +11,11 @@ public class GlitchObject : MonoBehaviour
         twitch,
         twitchFlash,
         destroy,
-        smrTest,
         none
     }
     public int gNum = 0;
     public GlitchType gType = GlitchType.none;
-    public int gTime = 0;
-    public int gDur = 0;
+    public float gTime = 0, gDur = 0;
     public bool glitching;
     public List<GlitchType> progression;
     public List<int> glitchDurations;
@@ -25,14 +23,14 @@ public class GlitchObject : MonoBehaviour
 
     // Specific glitch data
     public Material ogMat, glitchMat;
-    public int colorTime = 0, colorDur = 0, twitchTime = 0, twitchDur = 0;
+    public float colorTime = 0, colorDur = 0, twitchTime = 0, twitchDur = 0;
     public bool colorBool = false, twitchBool = false;
     public Vector3 ogPos, twitchPos;
 
     // Start is called before the first frame update
     void Start()
     {
-        ogMat = gameObject.GetComponent<MeshRenderer>().material;
+        ogMat = gameObject.GetComponent<Renderer>().material;
         ogPos = transform.position;
         if (final == GlitchType.none  && progression.Count > 0)
         {
@@ -43,6 +41,7 @@ public class GlitchObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if (glitching)
         ContinueGlitch();
     }
 
@@ -58,7 +57,6 @@ public class GlitchObject : MonoBehaviour
     void StartGlitch()
     {
         glitching = true;
-        gDur = 10;
         
         if (gNum >= progression.Count)
         {
@@ -72,22 +70,23 @@ public class GlitchObject : MonoBehaviour
         switch (gType)
         {
             case GlitchType.colorChange:
+                gDur = 2;
                 ColorChange();
                 break;
             case GlitchType.colorFlash:
-                colorDur = 3;
+                gDur = 2;
+                colorDur = 0.5f;
                 ColorFlash();
                 break;
             case GlitchType.twitch:
-                twitchDur = 3;
+                gDur = 1;
+                twitchDur = 0.5f;
                 Twitch();
                 break;
             case GlitchType.twitchFlash:
-                twitchDur = 3;
+                gDur = 1;
+                twitchDur = 0.5f;
                 Twitch();
-                break;
-            case GlitchType.smrTest:
-                ColorChange2();
                 break;
             case GlitchType.destroy:
                 Destroy();
@@ -103,7 +102,8 @@ public class GlitchObject : MonoBehaviour
         }
         else if (glitching)
         {
-            gTime += 1;
+            //gTime += 1;
+            gTime += Time.deltaTime;
             // call method from gtype
             switch (gType)
             {
@@ -128,11 +128,11 @@ public class GlitchObject : MonoBehaviour
         {
             //end colorChange
             case GlitchType.colorChange:
-                gameObject.GetComponent<MeshRenderer>().material = ogMat;
+                gameObject.GetComponent<Renderer>().material = ogMat;
                 break;
             //end colorFlash
             case GlitchType.colorFlash:
-                gameObject.GetComponent<MeshRenderer>().material = ogMat;
+                gameObject.GetComponent<Renderer>().material = ogMat;
                 break;
             //end twitch
             case GlitchType.twitch:
@@ -143,25 +143,16 @@ public class GlitchObject : MonoBehaviour
             case GlitchType.twitchFlash:
                 twitchTime = 0;
                 transform.position = ogPos;
-                gameObject.GetComponent<MeshRenderer>().material = ogMat;
+                gameObject.GetComponent<Renderer>().material = ogMat;
                 break;
+        break;
         }
         gType = GlitchType.none;
     }
 
     void ColorChange()
     {
-        gameObject.GetComponent<MeshRenderer>().material = glitchMat;
-
-        //Material newMaterial = new Material(ogMat.shader);
-        //newMaterial.CopyPropertiesFromMaterial(ogMat);
-        //newMaterial.color = color;
-        //gameobject.GetComponent<MeshRenderer>().material = newMaterial;
-    }
-
-    void ColorChange2()
-    {
-        gameObject.GetComponent<MeshRenderer>().material = glitchMat;
+        gameObject.GetComponent<Renderer>().material = glitchMat;
 
         //Material newMaterial = new Material(ogMat.shader);
         //newMaterial.CopyPropertiesFromMaterial(ogMat);
@@ -171,26 +162,25 @@ public class GlitchObject : MonoBehaviour
 
     void ColorFlash()
     {
-        gTime += 1;
-        colorTime += 1;
+        colorTime += Time.deltaTime;
         if (colorTime >= colorDur)
         {
             colorBool = !colorBool;
             if (colorBool)
             {
-                gameObject.GetComponent<MeshRenderer>().material = ogMat;
+                gameObject.GetComponent<Renderer>().material = ogMat;
             }
             else
             {
-                gameObject.GetComponent<MeshRenderer>().material = glitchMat;
+                gameObject.GetComponent<Renderer>().material = glitchMat;
             }
         }
     }
 
     void Twitch()
     {
-        gTime += 1;
-        twitchTime += 1;
+        twitchTime += Time.deltaTime;
+        twitchPos = new Vector3(ogPos.x+Random.Range(-0.5f, 0.5f), ogPos.y+Random.Range(-0.5f, 0.5f), ogPos.z+Random.Range(-0.5f, 0.5f));
         if (twitchTime >= twitchDur)
         {
             twitchBool = !twitchBool;
@@ -207,9 +197,9 @@ public class GlitchObject : MonoBehaviour
 
     void TwitchFlash()
     {
-        gameObject.GetComponent<MeshRenderer>().material = glitchMat;
-        gTime += 1;
-        twitchTime += 1;
+        gameObject.GetComponent<Renderer>().material = glitchMat;
+        twitchTime += Time.deltaTime;
+        twitchPos = new Vector3(ogPos.x + Random.Range(-0.5f, 0.5f), ogPos.y + Random.Range(-0.5f, 0.5f), ogPos.z + Random.Range(-0.5f, 0.5f));
         if (twitchTime >= twitchDur)
         {
             twitchBool = !twitchBool;

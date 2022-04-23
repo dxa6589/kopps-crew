@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SequenceController : MonoBehaviour
 {
     List<Animator> controllers;
     public Animator singer, drummer, guitar, bass;
-    public float elapsedTime, playTime = 12.0f, totalRunTime = 10;
+    public AudioSource mainAudio;
+    public float elapsedTime;
     public GameObject rightMic, leftMic, endingCover, venue;
     public bool micSwitched;
+    public string opening = "OpeningScene", main = "MainScene", credits = "CreditsScene";
     // Start is called before the first frame update
     void Start()
     {
@@ -27,28 +30,22 @@ public class SequenceController : MonoBehaviour
     void Update()
     {
         elapsedTime += Time.deltaTime;
-        foreach (Animator anim in controllers)
-        {
-            anim.SetFloat("elapsedTime", elapsedTime);
-        }
         if (!micSwitched && singer.GetCurrentAnimatorStateInfo(0).IsName("playing"))
         {
             StartPlaying();
         }
-        if (elapsedTime >= totalRunTime)
+        if (!mainAudio.isPlaying)
         {
-            EndPerformance();
+            EndPerformance(3);
         }
     }
 
     void StartPlaying()
     {
         SwitchMic();
-        foreach (Animator anim in controllers)
-        {
-            anim.SetTrigger("clap");
-        }
-        //anim.Play("Base Layer.playing", 0);
+        drummer.Play("playing");
+        guitar.Play("playing");
+        bass.Play("playing");
     }
 
     void SwitchMic()
@@ -58,9 +55,15 @@ public class SequenceController : MonoBehaviour
         micSwitched = true;
     }
 
-    void EndPerformance()
+    void EndPerformance(float delay)
     {
-        endingCover.SetActive(true);
-        venue.SetActive(false);
+        StartCoroutine(ChangeToScene(credits, delay));
     }
+
+    public IEnumerator ChangeToScene(string sceneToChangeTo, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(sceneToChangeTo);
+    }
+
 }
