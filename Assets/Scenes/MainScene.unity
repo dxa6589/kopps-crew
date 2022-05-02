@@ -489,6 +489,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b2ec928afd566d4cb86027e72f095ec, type: 3}
+--- !u!95 &109561295 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: c2943808308f7424690220a0aa68233a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2008921455}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &113653813 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 642c808a39fdfa749b2209f8aefcf640,
@@ -630,6 +636,12 @@ Transform:
   m_Father: {fileID: 10226297}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &125276418 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7626133091564210868, guid: 2326605208a4ab244b70aedd29ae0457,
+    type: 3}
+  m_PrefabInstance: {fileID: 444181598}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &134085679
 GameObject:
   m_ObjectHideFlags: 0
@@ -1686,6 +1698,12 @@ Transform:
   m_Father: {fileID: 1186155153}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 22.807, y: 90, z: 90}
+--- !u!95 &219466873 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2550554597664677172, guid: 860bc2323b034164cbbb86aa4ce7cbfd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1272220279}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &221144080 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7879410689783090164, guid: 3a6dabd53a7672341ba1e5dc062facc1,
@@ -17825,10 +17843,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e6be0fd6e2123f47820ad21481bbf40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  singerA: {fileID: 0}
-  drummerA: {fileID: 0}
-  guitarA: {fileID: 0}
-  bassA: {fileID: 0}
+  singerA: {fileID: 125276418}
+  drummerA: {fileID: 7771696437565457115}
+  guitarA: {fileID: 219466873}
+  bassA: {fileID: 109561295}
   mainAudio: {fileID: 228965410}
   elapsedTime: 0
   rightMic: {fileID: 444181601}
